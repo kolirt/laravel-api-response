@@ -5,7 +5,7 @@ if (!function_exists('api')) {
     {
         static $api;
 
-        if ($api) {
+        if (!$api) {
             $api = new \Kolirt\ApiResponse\Api;
         }
 
