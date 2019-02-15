@@ -134,7 +134,7 @@ class Api
         return $this;
     }
 
-    public function send()
+    public function render()
     {
         $response = [
             'ok' => $this->getResponseOk(),

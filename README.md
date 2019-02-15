@@ -1,4 +1,4 @@
-# Laravel Api Response v1.0.1
+# Laravel Api Response v1.0.2
 
 The package will help to generate json answers.
 
