@@ -2,7 +2,6 @@
 
 namespace Kolirt\ApiResponse;
 
-
 class Api
 {
 
@@ -97,6 +96,10 @@ class Api
         526,
     ];
 
+    /**
+     * @param int $code
+     * @return $this
+     */
     public function error($code = 400)
     {
         $this->setResponseOk(false);
@@ -105,6 +108,10 @@ class Api
         return $this;
     }
 
+    /**
+     * @param int $code
+     * @return $this
+     */
     public function success($code = 200)
     {
         $this->setResponseOk(true);
@@ -113,6 +120,10 @@ class Api
         return $this;
     }
 
+    /**
+     * @param $text
+     * @return $this
+     */
     public function setDescription($text)
     {
         $this->description = $text;
@@ -120,6 +131,10 @@ class Api
         return $this;
     }
 
+    /**
+     * @param $code
+     * @return $this
+     */
     public function setCode($code)
     {
         $this->responseCode = $code;
@@ -127,6 +142,10 @@ class Api
         return $this;
     }
 
+    /**
+     * @param $data
+     * @return $this
+     */
     public function setData($data)
     {
         $this->data = $data;
@@ -134,6 +153,9 @@ class Api
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
     public function render()
     {
         $response = [
@@ -152,6 +174,13 @@ class Api
         return response()->json($response, $this->getResponseCode());
     }
 
+    /**
+     * @return mixed
+     */
+    public function __toString()
+    {
+        return $this->render();
+    }
 
     private function setResponseOk($status)
     {

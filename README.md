@@ -1,11 +1,11 @@
-# Laravel Api Response v1.0.4
+# Laravel Api Response v1.0.5
 
 The package will help to generate json answers.
 
 ## Installation
 
 ```
-composer require kolirt/laravel-api-response
+$ composer require kolirt/laravel-api-response
 ```
 
 ## Example
@@ -21,9 +21,7 @@ return api()
         
         ->setData(['Data #1', 'Data #2'])
         // or
-        ->setData('Data')
-        
-        ->render();
+        ->setData('Data');
 ```
 
 ```php
@@ -53,9 +51,7 @@ return api()
         
         ->setData(['Data #1', 'Data #2'])
         // or
-        ->setData('Data')
-        
-        ->render();
+        ->setData('Data');
 ```
 
 ```php
