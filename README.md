@@ -1,4 +1,4 @@
-# Laravel Api Response v1.0.5
+# Laravel Api Response
 
 The package will help to generate json answers.
 
@@ -21,7 +21,9 @@ return api()
         
         ->setData(['Data #1', 'Data #2'])
         // or
-        ->setData('Data');
+        ->setData('Data')
+        
+        ->render();
 ```
 
 ```php
@@ -51,7 +53,9 @@ return api()
         
         ->setData(['Data #1', 'Data #2'])
         // or
-        ->setData('Data');
+        ->setData('Data')
+        
+        ->render();
 ```
 
 ```php
