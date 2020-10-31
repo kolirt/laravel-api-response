@@ -11,6 +11,8 @@ class Api
     private $description = null;
     private $data = null;
 
+    private $cookies = [];
+
     private $responseCodes = [
         /* 1xx */
         100,
@@ -154,24 +156,49 @@ class Api
     }
 
     /**
+     * @param null $name
+     * @param null $value
+     * @param int $minutes
+     * @param null $path
+     * @param null $domain
+     * @param null $secure
+     * @param bool $httpOnly
+     * @param bool $raw
+     * @param null $sameSite
+     * @return $this
+     */
+    public function cookie($name = null, $value = null, $minutes = 0, $path = null, $domain = null, $secure = null, $httpOnly = true, $raw = false, $sameSite = null)
+    {
+        $this->cookies[] = cookie($name, $value, $minutes, $path, $domain, $secure, $httpOnly, $raw, $sameSite);
+
+        return $this;
+    }
+
+    /**
      * @return mixed
      */
     public function render()
     {
-        $response = [
+        $result = [
             'ok' => $this->getResponseOk(),
         ];
 
         if (!$this->getResponseOk())
-            $response['error_code'] = $this->getResponseCode();
+            $result['error_code'] = $this->getResponseCode();
 
         if ($this->getDescription())
-            $response['description'] = $this->getDescription();
+            $result['description'] = $this->getDescription();
 
         if ($this->getData())
-            $response['result'] = $this->getData();
+            $result['result'] = $this->getData();
 
-        return response()->json($response, $this->getResponseCode());
+        $response = response()->json($result, $this->getResponseCode());
+
+        foreach ($this->cookies as $cookie) {
+            $response->withCookie($cookie);
+        }
+
+        return $response;
     }
 
     /**

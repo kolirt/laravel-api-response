@@ -93,15 +93,21 @@ return api()->setCode($code);
 ```
 
 ### setDescription
-Set description for response.
+Set description to response.
 ```php
 return api()->setDescription(['Description #1', 'Description #2']);
 // or
 return api()->setDescription('Description');
 ```
 
+### cookie
+Add cookie to response.
+```php
+return api()->cookie('token', 'asdsadsadas', 60 * 3);
+```
+
 ### setData
-Set data for response.
+Set data to response.
 ```php
 return api()->setData(['Data #1', 'Data #2']);
 // or
