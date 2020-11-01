@@ -103,7 +103,7 @@ return api()->setDescription('Description');
 ### cookie
 Add cookie to response.
 ```php
-return api()->cookie('token', 'asdsadsadas', 60 * 3);
+return api()->cookie(cookie('token', 'asdsadsadas', 60 * 3));
 ```
 
 ### setData

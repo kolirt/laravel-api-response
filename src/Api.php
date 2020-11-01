@@ -156,20 +156,12 @@ class Api
     }
 
     /**
-     * @param null $name
-     * @param null $value
-     * @param int $minutes
-     * @param null $path
-     * @param null $domain
-     * @param null $secure
-     * @param bool $httpOnly
-     * @param bool $raw
-     * @param null $sameSite
+     * @param $cookie
      * @return $this
      */
-    public function cookie($name = null, $value = null, $minutes = 0, $path = null, $domain = null, $secure = null, $httpOnly = true, $raw = false, $sameSite = null)
+    public function cookie($cookie)
     {
-        $this->cookies[] = cookie($name, $value, $minutes, $path, $domain, $secure, $httpOnly, $raw, $sameSite);
+        $this->cookies[] = $cookie;
 
         return $this;
     }
