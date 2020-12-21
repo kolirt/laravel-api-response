@@ -100,6 +100,15 @@ return api()->setDescription(['Description #1', 'Description #2']);
 return api()->setDescription('Description');
 ```
 
+### setErrors
+Set description to response.
+```php
+return api()->setErrors([
+    'first_name' => 'Error message', 
+    'last_name' => ['Error message 1', 'Error message 2']
+]);
+```
+
 ### cookie
 Add cookie to response.
 ```php
