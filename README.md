@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/kolirt/laravel-api-response/master/image.png">
+    <img src="https://raw.githubusercontent.com/kolirt/laravel-api-response/master/image.svg">
 </p>
 
 # Laravel Api Response
