@@ -33,7 +33,7 @@ return api()
 ```php
 [
     'ok' => false,
-    'error_code' => 400
+    'error_code' => 400,
     
     'description' => ['Description #1', 'Description #2'],
     // or

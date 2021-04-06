@@ -53,8 +53,12 @@ class Api
      * @param $errors
      * @return $this
      */
-    public function setErrors($errors)
+    public function setErrors($errors, $errored = true)
     {
+        if ($errored) {
+            $this->setResponseOk(false);
+            $this->setCode(422);
+        }
         $this->errors = $errors;
 
         return $this;
