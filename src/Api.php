@@ -128,6 +128,19 @@ class Api
     }
 
     /**
+     * @param $message
+     * @param int $code
+     * @return $this
+     */
+    public function abort($message, $code = 400)
+    {
+        $this->error($code);
+        $this->setDescription($message);
+
+        return $this;
+    }
+
+    /**
      * @return mixed
      */
     public function __toString()

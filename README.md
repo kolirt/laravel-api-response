@@ -113,6 +113,11 @@ return api()->setErrors([
 ]);
 ```
 
+### abort
+```php
+return api()->abort('Error message', 400);
+```
+
 ### cookie
 Add cookie to response.
 ```php
