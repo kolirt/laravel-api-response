@@ -134,10 +134,8 @@ class Api
      */
     public function abort($message, $code = 400)
     {
-        $this->error($code);
-        $this->setDescription($message);
-
-        return $this;
+        $response = $this->error($code)->setDescription($message)->render();
+        abort($response);
     }
 
     /**
