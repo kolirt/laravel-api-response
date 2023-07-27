@@ -1,0 +1,26 @@
+{
+  "name": "kolirt/laravel-api-response",
+  "description": "The package will help to generate json answers.",
+  "keywords": [
+    "laravel",
+    "json response",
+    "api",
+    "rest api"
+  ],
+  "license": "MIT",
+  "version": "2.0.3",
+  "authors": [
+    {
+      "name": "kolirt"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "files": [
+      "src/helpers.php"
+    ],
+    "psr-4": {
+      "Kolirt\\ApiResponse\\": "src"
+    }
+  }
+}
