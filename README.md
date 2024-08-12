@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/kolirt/laravel-api-response/v2/cover.png">
+    <img src="https://raw.githubusercontent.com/kolirt/laravel-api-response/v3/cover.png">
 </p>
 
 
