@@ -5,20 +5,20 @@ namespace Kolirt\ApiResponse;
 class Api
 {
 
-    private $responseCode = 200;
-    private $responseOk = true;
+    private int $responseCode = 200;
+    private bool $responseOk = true;
 
-    private $description = null;
-    private $errors = null;
-    private $data = null;
+    private string|array|null $description = null;
+    private array|null $errors = null;
+    private mixed $data = null;
 
-    private $cookies = [];
+    private array $cookies = [];
 
     /**
      * @param int $code
      * @return $this
      */
-    public function error($code = 400)
+    public function error(int $code = 400): self
     {
         $this->setResponseOk(false);
         $this->setCode($code);
@@ -30,7 +30,7 @@ class Api
      * @param int $code
      * @return $this
      */
-    public function success($code = 200)
+    public function success(int $code = 200): self
     {
         $this->setResponseOk(true);
         $this->setCode($code);
@@ -39,10 +39,10 @@ class Api
     }
 
     /**
-     * @param $text
+     * @param string|array $text
      * @return $this
      */
-    public function setDescription($text)
+    public function setDescription(string|array $text): self
     {
         $this->description = $text;
 
@@ -50,25 +50,21 @@ class Api
     }
 
     /**
-     * @param $errors
+     * @param array $errors
      * @return $this
      */
-    public function setErrors($errors, $errored = true)
+    public function setErrors(array $errors): self
     {
-        if ($errored) {
-            $this->setResponseOk(false);
-            $this->setCode(422);
-        }
         $this->errors = $errors;
 
         return $this;
     }
 
     /**
-     * @param $code
+     * @param int $code
      * @return $this
      */
-    public function setCode($code)
+    public function setCode(int $code): self
     {
         $this->responseCode = $code;
 
@@ -76,10 +72,10 @@ class Api
     }
 
     /**
-     * @param $data
+     * @param mixed $data
      * @return $this
      */
-    public function setData($data)
+    public function setData(mixed $data): self
     {
         $this->data = $data;
 
@@ -90,7 +86,7 @@ class Api
      * @param $cookie
      * @return $this
      */
-    public function cookie($cookie)
+    public function cookie($cookie): self
     {
         $this->cookies[] = $cookie;
 
@@ -128,11 +124,10 @@ class Api
     }
 
     /**
-     * @param $message
+     * @param string|array $message
      * @param int $code
-     * @return $this
      */
-    public function abort($message, $code = 400)
+    public function abort(string|array $message, int $code = 400): void
     {
         $response = $this->error($code)->setDescription($message)->render();
         abort($response);
@@ -146,27 +141,27 @@ class Api
         return $this->render();
     }
 
-    private function setResponseOk($status)
+    private function setResponseOk(bool $status): void
     {
         $this->responseOk = $status;
     }
 
-    private function getResponseCode()
+    private function getResponseCode(): int
     {
         return $this->responseCode;
     }
 
-    private function getResponseOk()
+    private function getResponseOk(): bool
     {
         return $this->responseOk;
     }
 
-    private function getDescription()
+    private function getDescription(): array|string|null
     {
         return $this->description;
     }
 
-    private function getErrors()
+    private function getErrors(): ?array
     {
         return $this->errors;
     }

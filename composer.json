@@ -1,26 +1,31 @@
 {
-  "name": "kolirt/laravel-api-response",
-  "description": "The package will help to generate json answers.",
-  "keywords": [
-    "laravel",
-    "json response",
-    "api",
-    "rest api"
-  ],
-  "license": "MIT",
-  "version": "2.0.3",
-  "authors": [
-    {
-      "name": "kolirt"
-    }
-  ],
-  "require": {},
-  "autoload": {
-    "files": [
-      "src/helpers.php"
+    "name": "kolirt/laravel-api-response",
+    "description": "The package will help to generate json answers.",
+    "type": "library",
+    "keywords": [
+        "laravel",
+        "json response",
+        "api",
+        "rest api"
     ],
-    "psr-4": {
-      "Kolirt\\ApiResponse\\": "src"
+    "homepage": "https://github.com/kolirt/laravel-api-response",
+    "license": "MIT",
+    "version": "3.0.0",
+    "authors": [
+        {
+            "name": "kolirt"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "laravel/framework": "^10.0 | ^11.0"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {
+            "Kolirt\\ApiResponse\\": "src"
+        }
     }
-  }
 }
