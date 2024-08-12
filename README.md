@@ -13,7 +13,7 @@ The package will help to generate json answers.
 
 ## Installation
 ```
-$ composer require kolirt/laravel-api-response
+$ composer require kolirt/laravel-api-response ^2
 ```
 
 
