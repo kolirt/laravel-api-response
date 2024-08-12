@@ -4,7 +4,7 @@
 
 
 # Laravel Api Response
-The package will help to generate json answers.
+Unification of API responses for Laravel projects inspired by telegram api responses.
 
 
 # Structure
