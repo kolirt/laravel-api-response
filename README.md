@@ -2,15 +2,20 @@
     <img src="https://raw.githubusercontent.com/kolirt/laravel-api-response/3e46d9c25ba6e7fd096ec57c668125cb2ab985ce/image.svg">
 </p>
 
-# Laravel Api Response
 
+# Laravel Api Response
 The package will help to generate json answers.
 
-## Installation
+<a href="https://www.buymeacoffee.com/kolirt" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/arial-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" >
+</a>
 
+
+## Installation
 ```
 $ composer require kolirt/laravel-api-response
 ```
+
 
 ## Example
 Error response.
@@ -76,6 +81,7 @@ return api()
 ]
 ```
 
+
 ## Methods
 
 ### error
@@ -84,17 +90,20 @@ Default response code 400.
 return api()->error();
 ```
 
+
 ### success
 Default response code 200.
 ```php
 return api()->success();
 ```
 
+
 ### setCode
 Set custom response code. Available [codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
 ```php
 return api()->setCode($code);
 ```
+
 
 ### setDescription
 Set description to response.
@@ -103,6 +112,7 @@ return api()->setDescription(['Description #1', 'Description #2']);
 // or
 return api()->setDescription('Description');
 ```
+
 
 ### setErrors
 Set description to response.
@@ -113,16 +123,19 @@ return api()->setErrors([
 ]);
 ```
 
+
 ### abort
 ```php
 return api()->abort('Error message', 400);
 ```
+
 
 ### cookie
 Add cookie to response.
 ```php
 return api()->cookie(cookie('token', 'asdsadsadas', 60 * 3));
 ```
+
 
 ### setData
 Set data to response.
@@ -137,3 +150,15 @@ Render response.
 ```php
 return api()->render();
 ```
+
+
+## FAQ
+Check closed [issues](https://github.com/kolirt/laravel-api-response/issues) to get answers for most asked questions
+
+
+## License
+[MIT](LICENSE.txt)
+
+
+## Other packages
+Check out my other packages on my [GitHub profile](https://github.com/kolirt)
