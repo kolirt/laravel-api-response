@@ -1,13 +1,12 @@
+# Laravel Api Response
+Unification of API responses for Laravel projects inspired by telegram api responses.
+
 <p align="center">
     <img src="https://raw.githubusercontent.com/kolirt/laravel-api-response/v3/cover.png">
 </p>
 
 
-# Laravel Api Response
-Unification of API responses for Laravel projects inspired by telegram api responses.
-
-
-# Structure
+## Structure
 - [Getting started](#getting-started)
   - [Requirements](#requirements) 
   - [Installation](#installation)
@@ -34,26 +33,26 @@ Unification of API responses for Laravel projects inspired by telegram api respo
 </a>
 
 
-# Getting started
+## Getting started
 
-## Requirements
+### Requirements
 - PHP >= 8.1
 - Laravel >= 10
 
 For lesser versions of Laravel or PHP, use the [v2](https://github.com/kolirt/laravel-api-response/tree/v2)
 
 
-## Installation
+### Installation
 ```bash
 composer require kolirt/laravel-api-response
 ```
 
 
-# Usage
+## Usage
 
-## Example
+### Example
 
-### Error response
+#### Error response
 ```php
 return api()
         ->error()
@@ -86,7 +85,7 @@ return api()
 ```
 
 
-### Success response
+#### Success response
 ```php
 return api()
         ->success()
@@ -118,31 +117,35 @@ return api()
 ```
 
 
-## Methods
+### Methods
 
-### error
-Mark response as error.
+#### `error`
+Mark response as error
+
 ```php
 return api()->error();
 ```
 
 
-### success
-Mark response as success.
+#### `success`
+Mark response as success
+
 ```php
 return api()->success();
 ```
 
 
-### setCode
-Set specific code to response. Available [codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
+#### `setCode`
+Set specific code to response. Available [codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
+
 ```php
 return api()->setCode($code);
 ```
 
 
-### setDescription
-Add description to response.
+#### `setDescription`
+Add description to response
+
 ```php
 return api()->setDescription(['Description #1', 'Description #2']);
 // or
@@ -150,8 +153,9 @@ return api()->setDescription('Description');
 ```
 
 
-### setErrors
-Add errors to response.
+#### `setErrors`
+Add errors to response
+
 ```php
 return api()->setErrors([
     'first_name' => 'Error message', 
@@ -160,22 +164,25 @@ return api()->setErrors([
 ```
 
 
-### abort
-Abort response with error.
+#### `abort`
+Abort response with error
+
 ```php
 return api()->abort('Error message', 400);
 ```
 
 
-### cookie
-Add cookie to response.
+#### `cookie`
+Add cookie to response
+
 ```php
 return api()->cookie(cookie('token', 'asdsadsadas', 60 * 3));
 ```
 
 
-### setData
-Add data to response.
+#### `setData`
+Add data to response
+
 ```php
 return api()->setData(['Data #1', 'Data #2']);
 // or
@@ -183,20 +190,21 @@ return api()->setData('Data');
 ```
 
 
-### render
-Render response.
+#### `render`
+Render response
+
 ```php
 return api()->render();
 ```
 
 
-# FAQ
+## FAQ
 Check closed [issues](https://github.com/kolirt/laravel-api-response/issues) to get answers for most asked questions
 
 
-# License
+## License
 [MIT](LICENSE.txt)
 
 
-# Other packages
+## Other packages
 Check out my other packages on my [GitHub profile](https://github.com/kolirt)
