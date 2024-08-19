@@ -1,5 +1,5 @@
 # Laravel Api Response
-Unification of API responses for Laravel projects inspired by telegram api responses.
+Unification of API responses for Laravel projects inspired by telegram api responses
 
 <p align="center">
     <img src="https://raw.githubusercontent.com/kolirt/laravel-api-response/v3/cover.png">
